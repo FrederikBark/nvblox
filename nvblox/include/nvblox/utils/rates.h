@@ -21,6 +21,8 @@ limitations under the License.
 #include <glog/logging.h>
 
 #include <nvblox/utils/timing.h>
+#include <functional>
+
 
 namespace nvblox {
 namespace timing {
