@@ -30,6 +30,10 @@ FetchContent_Declare(
 )
 
 # stdgpu build options
+if(NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "None")
+  message(STATUS "CMAKE_BUILD_TYPE was '${CMAKE_BUILD_TYPE}', forcing Release")
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type" FORCE)
+endif()
 set(STDGPU_BUILD_SHARED_LIBS OFF)
 set(STDGPU_BUILD_EXAMPLES OFF)
 set(STDGPU_BUILD_TESTS OFF)
