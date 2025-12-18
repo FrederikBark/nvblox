@@ -1,6 +1,8 @@
 if (USE_SYSTEM_STDGPU)
+  message(STATUS "Using system stdgpu")
   find_package(stdgpu REQUIRED)
 else()
+message(STATUS "Using bundled stdgpu")
 include(FetchContent)
 
 # Patches to stdgpu
@@ -40,8 +42,9 @@ FetchContent_MakeAvailable(ext_stdgpu)
 # Apply nvblox compile options to exported targets
 set_nvblox_compiler_options_nowarnings(stdgpu)
 add_library(nvblox_stdgpu INTERFACE)
-  target_link_libraries(nvblox_stdgpu INTERFACE stdgpu)
-  target_include_directories(nvblox_stdgpu INTERFACE
-    $<BUILD_INTERFACE:${ext_stdgpu_SOURCE_DIR}/src>
-    $<INSTALL_INTERFACE:include/stdgpu>)
+target_link_libraries(nvblox_stdgpu INTERFACE stdgpu)
+target_include_directories(nvblox_stdgpu INTERFACE
+$<BUILD_INTERFACE:${ext_stdgpu_SOURCE_DIR}/src>
+$<INSTALL_INTERFACE:include/stdgpu>)
+
 endif()

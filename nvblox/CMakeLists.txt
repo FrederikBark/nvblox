@@ -176,7 +176,7 @@ endif()
 ###############
 # EXPERIMENTS #
 ###############
-add_subdirectory(experiments)
+#add_subdirectory(experiments)
 
 ##########
 # EXPORT #
@@ -198,10 +198,10 @@ install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
-install(
-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/executables/include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
+#install(
+#    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/executables/include/
+#    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+#)
 install(
     DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/eigen/include/eigen3
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}

@@ -26,7 +26,7 @@ project(nvblox VERSION 0.0.4 LANGUAGES CXX CUDA)
 ########################
 # Build options
 option(BUILD_EXPERIMENTS "Build performance experimentation binaries" OFF)
-option(BUILD_TESTING "Build tests" ON)
+option(BUILD_TESTING "Build tests" OFF)
 
 # Include file that defines functions for adding nvblox binary targets
 include(cmake/cuda/setup_compute_capability.cmake)
