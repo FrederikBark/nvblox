@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 3.22.1...3.22.2)
 
+set(JETSON_ROOTFS "/opt/jetson-rootfs")
+
+# link directories from Jetson rootfs on build server
+link_directories(
+    ${JETSON_ROOTFS}/usr/lib/aarch64-linux-gnu
+)
+
 
 # Set default build type if not provided by user
 if(NOT CMAKE_BUILD_TYPE)
