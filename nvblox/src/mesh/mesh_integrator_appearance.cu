@@ -81,7 +81,7 @@ __global__ void updateAppearanceBlockByClosestVoxel(
     const Vector3f p_B_V_m = p_L_V_m - p_L_B_m;
 
     // Convert this to a voxel index
-    Index3D voxel_idx_in_block = (p_B_V_m.array() / voxel_size).cast<int>();
+    Index3D voxel_idx_in_block = (p_B_V_m.array() / voxel_size).template cast<int>();
 
     // NOTE(alexmillane): Here we make some assumptions.
     // - We assume that the closest voxel to p_L_V is in the AppearanceBlock
